@@ -31,15 +31,15 @@
                 </div>
                 <div class="input-box">
                     <label>PA1 (40%)</label>
-                    <input type="number" id="pa1" placeholder="Nota 0-20">
+                    <input type="number" id="pa1" min="0" max="20" placeholder="Nota 0-20">
                 </div>
                 <div class="input-box">
                     <label>Examen Parcial (60%)</label>
-                    <input type="number" id="ep" placeholder="Nota 0-20">
+                    <input type="number" id="ep" min="0" max="20" placeholder="Nota 0-20">
                 </div>
                 <div class="recovery-box">
                     <span><i class="fa-solid fa-shield-halved"></i> Recuperación Módulo I</span>
-                    <input type="number" id="rec1" placeholder="Nota recuperada">
+                    <input type="number" id="rec1" min="0" max="20" placeholder="Nota recuperada">
                 </div>
             </div>
 
@@ -51,7 +51,7 @@
                 </div>
                 <div class="input-box">
                     <label>PA2 (30%)</label>
-                    <input type="number" id="pa2" placeholder="Nota 0-20">
+                    <input type="number" id="pa2" min="0" max="20" placeholder="Nota 0-20">
                 </div>
                <div class="cisco-row">
     <div class="input-box">
@@ -65,15 +65,15 @@
 </div>
 <div class="input-box">
     <label>PA3 (10%):</label>
-    <input type="number" id="pa3" readonly placeholder="Autocompletado">
+    <input type="number" id="pa3" min="0" max="20" readonly placeholder="Autocompletado">
 </div>
                 <div class="input-box">
                     <label>Examen Final (60%)</label>
-                    <input type="number" id="ef" placeholder="Nota 0-20">
+                    <input type="number" id="ef" min="0" max="20" placeholder="Nota 0-20">
                 </div>
                 <div class="recovery-box">
                     <span><i class="fa-solid fa-shield-halved"></i> Recuperación Módulo II</span>
-                    <input type="number" id="rec2" placeholder="Nota recuperada">
+                    <input type="number" id="rec2" min="0" max="20" placeholder="Nota recuperada">
                 </div>
             </div>
         </div>
@@ -101,6 +101,7 @@
     <script src="script.js"></script>
 </body>
 </html>
+
 
 
 
