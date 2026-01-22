@@ -5,12 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UCV-CIS | Calculadora Anthony Chilet</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Enlace de Iconos corregido -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-    <!-- SLIDE 1: IMPACTO VISUAL -->
     <section class="hero">
         <div class="hero-content">
             <img src="img/logo.png" alt="UCV Logo" class="main-logo">
@@ -23,10 +21,8 @@
         </div>
     </section>
 
-    <!-- SLIDE 2: CALCULADORA -->
     <main id="calculadora" class="main-content">
         <div class="calculator-grid">
-            
             <!-- Módulo I -->
             <div class="module-card">
                 <div class="module-header">
@@ -70,17 +66,17 @@
                     <input type="number" id="rec2" placeholder="Nota recuperada">
                 </div>
             </div>
-
         </div>
 
-        <button onclick="calcularTodo()" class="btn-main">Calcular Mi Estado Académico</button>
+        <!-- Corregido: clase coincide con CSS -->
+        <button onclick="calcularTodo()" class="calc-button">Calcular Mi Estado Académico</button>
 
-        <!-- ZONA DE RESULTADOS E IA -->
         <div id="display-results" class="results-container hidden">
             <div class="results-grid">
-                <div class="res-item">Módulo I: <strong id="out-m1">0</strong></div>
-                <div class="res-item">Módulo II: <strong id="out-m2">0</strong></div>
-                <div class="res-item total">Final: <strong id="out-pf">0</strong></div>
+                <!-- IDs corregidos para coincidir con el JS -->
+                <div class="res-item">Módulo I: <strong id="res-m1">0</strong></div>
+                <div class="res-item">Módulo II: <strong id="res-m2">0</strong></div>
+                <div class="res-item total">Final: <strong id="res-pf">0</strong></div>
             </div>
             
             <div id="status-label" class="status-label"></div>
@@ -95,4 +91,3 @@
     <script src="script.js"></script>
 </body>
 </html>
-
