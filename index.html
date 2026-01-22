@@ -3,50 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora de Notas UCV</title>
+    <title>UCV-CIS | Calculadora de Acreditación</title>
     <link rel="stylesheet" href="style.css">
+    <!-- Iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <div class="calculator-card">
-        <div class="header">
-            <!-- AQUÍ ESTÁ EL CAMBIO: Ruta apuntando a la carpeta img y al archivo renombrado -->
-            <img src="img/logo.png" alt="UCV Logo" class="logo">
-            <h2>Calculadora de Promedios</h2>
+    <!-- SLIDE 1: HERO / LOGO -->
+    <header class="hero">
+        <div class="hero-content">
+            <img src="img/logo.png" alt="UCV Logo" class="main-logo">
+            <h1>Programa de Acreditación en Computación</h1>
+            <p class="instructor">By Anthony Chilet <span class="badge">Docente UCV-CIS</span></p>
+            <div class="scroll-indicator"><i class="fa-solid fa-chevron-down"></i></div>
+        </div>
+    </header>
+
+    <!-- SLIDE 2: CALCULADORA -->
+    <main class="container">
+        <div class="calculator-grid">
+            <!-- Módulo I -->
+            <section class="card">
+                <div class="card-header">
+                    <i class="fa-solid fa-book"></i>
+                    <h3>Módulo I: Costos y Presupuestos</h3>
+                </div>
+                <div class="input-group">
+                    <label>PA1 (40%)</label>
+                    <input type="number" id="pa1" min="0" max="20" placeholder="00">
+                </div>
+                <div class="input-group">
+                    <label>Examen Parcial (60%)</label>
+                    <input type="number" id="ep" min="0" max="20" placeholder="00">
+                </div>
+                <div class="recovery-section">
+                    <label><i class="fa-solid fa-rotate"></i> Simular Recuperación I (reemplaza EP)</label>
+                    <input type="number" id="rec1" min="0" max="20" placeholder="Opcional">
+                </div>
+            </section>
+
+            <!-- Módulo II -->
+            <section class="card">
+                <div class="card-header">
+                    <i class="fa-solid fa-diagram-project"></i>
+                    <h3>Módulo II: Gestión de Proyectos</h3>
+                </div>
+                <div class="input-group">
+                    <label>PA2 (30%)</label>
+                    <input type="number" id="pa2" min="0" max="20" placeholder="00">
+                </div>
+                <div class="input-group">
+                    <label>PA3 (10%)</label>
+                    <input type="number" id="pa3" min="0" max="20" placeholder="00">
+                </div>
+                <div class="input-group">
+                    <label>Examen Final (60%)</label>
+                    <input type="number" id="ef" min="0" max="20" placeholder="00">
+                </div>
+                <div class="recovery-section">
+                    <label><i class="fa-solid fa-rotate"></i> Simular Recuperación II (reemplaza EF)</label>
+                    <input type="number" id="rec2" min="0" max="20" placeholder="Opcional">
+                </div>
+            </section>
         </div>
 
-        <div class="module">
-            <h3>Módulo 1</h3>
-            <div class="input-group">
-                <label>Producto Académico 1 (PA1):</label>
-                <input type="number" id="pa1" min="0" max="20" step="0.1" placeholder="0-20">
+        <button onclick="calcularTodo()" class="btn-main">Calcular Mi Estado Académico</button>
+
+        <!-- RESULTADOS E IA -->
+        <div id="result-area" class="result-area hidden">
+            <div class="results-summary">
+                <div class="res-box">Módulo I: <span id="res-m1">0</span></div>
+                <div class="res-box">Módulo II: <span id="res-m2">0</span></div>
+                <div class="res-box final">Promedio Final: <span id="res-pf">0</span></div>
             </div>
-            <div class="input-group">
-                <label>Examen Parcial (EP):</label>
-                <input type="number" id="ep" min="0" max="20" step="0.1" placeholder="0-20">
+            
+            <div id="status-badge" class="status-badge"></div>
+
+            <div class="ai-advice">
+                <div class="ai-header">
+                    <i class="fa-solid fa-robot"></i>
+                    <span>Asistente Académico IA</span>
+                </div>
+                <p id="ai-text">Ingresa tus notas para recibir consejos personalizados sobre tu acreditación.</p>
             </div>
         </div>
+    </main>
 
-        <div class="module">
-            <h3>Módulo 2</h3>
-            <div class="input-group">
-                <label>Producto Académico 2 (PA2):</label>
-                <input type="number" id="pa2" min="0" max="20" step="0.1" placeholder="0-20">
-            </div>
-            <div class="input-group">
-                <label>Producto Académico 3 (PA3):</label>
-                <input type="number" id="pa3" min="0" max="20" step="0.1" placeholder="0-20">
-            </div>
-            <div class="input-group">
-                <label>Examen Final (EF):</label>
-                <input type="number" id="ef" min="0" max="20" step="0.1" placeholder="0-20">
-            </div>
-        </div>
-
-        <button onclick="calcularPromedio()">Calcular Promedio Final</button>
-
-        <div id="result" class="result-container">
-            </div>
-    </div>
     <script src="script.js"></script>
 </body>
 </html>
