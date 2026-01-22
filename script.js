@@ -69,9 +69,16 @@ function calcularTodo() {
     aiSuggestion.innerHTML = consejo;
 }
 function calcularPromedioCisco() {
-    const notaVirtual = parseFloat(document.getElementById('cisco_v').value) || 0;
+    const porcentajeCisco = parseFloat(document.getElementById('cisco_v').value) || 0;
     const notaCuestionario = parseFloat(document.getElementById('cisco_e').value) || 0;
-    const promedio = (notaVirtual + notaCuestionario) / 2;
+    
+    // Conversión de porcentaje (0-100) a escala (0-20)
+    const notaVirtualConvertida = (porcentajeCisco / 100) * 20;
+    
+    // Promedio final para PA3
+    const promedio = (notaVirtualConvertida + notaCuestionario) / 2;
+    
     document.getElementById('pa3').value = promedio.toFixed(2);
 }
+
 
