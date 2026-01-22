@@ -1,8 +1,11 @@
 function calcularTodo() {
     const getVal = (id) => {
-        const input = document.getElementById(id);
-        return (input && input.value !== "") ? parseFloat(input.value) : null;
-    };
+    const input = document.getElementById(id);
+    if (!input || input.value === "") return null;
+    let val = parseFloat(input.value);
+    // Limita el valor para que no sea menor a 0 ni mayor a 20
+    return Math.min(20, Math.max(0, val));
+};
 
     const pa1 = getVal('pa1');
     const ep = getVal('ep');
@@ -69,16 +72,17 @@ function calcularTodo() {
     aiSuggestion.innerHTML = consejo;
 }
 function calcularPromedioCisco() {
-    const porcentajeCisco = parseFloat(document.getElementById('cisco_v').value) || 0;
-    const notaCuestionario = parseFloat(document.getElementById('cisco_e').value) || 0;
+    let v = parseFloat(document.getElementById('cisco_v').value) || 0;
+    let e = parseFloat(document.getElementById('cisco_e').value) || 0;
     
-    // Conversión de porcentaje (0-100) a escala (0-20)
-    const notaVirtualConvertida = (porcentajeCisco / 100) * 20;
+    // Limitar porcentaje a 100 y cuestionario a 20
+    v = Math.min(100, Math.max(0, v));
+    e = Math.min(20, Math.max(0, e));
     
-    // Promedio final para PA3
-    const promedio = (notaVirtualConvertida + notaCuestionario) / 2;
-    
+    const notaV = (v / 100) * 20;
+    const promedio = (notaV + e) / 2;
     document.getElementById('pa3').value = promedio.toFixed(2);
 }
+
 
 
