@@ -68,3 +68,10 @@ function calcularTodo() {
     statusLabel.style.color = (estado.includes("✅") || estado.includes("🟢")) ? "#27ae60" : "#2980b9";
     aiSuggestion.innerHTML = consejo;
 }
+function calcularPromedioCisco() {
+    const notaVirtual = parseFloat(document.getElementById('cisco_v').value) || 0;
+    const notaCuestionario = parseFloat(document.getElementById('cisco_e').value) || 0;
+    const promedio = (notaVirtual + notaCuestionario) / 2;
+    document.getElementById('pa3').value = promedio.toFixed(2);
+}
+
