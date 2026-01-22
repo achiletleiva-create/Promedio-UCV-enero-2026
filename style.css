@@ -77,3 +77,11 @@ body { margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, sans-serif; backg
 
 .hidden { display: none; }
 @keyframes slideUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+.cisco-row {
+    display: flex;
+    gap: 15px;
+}
+.cisco-row .input-box {
+    flex: 1;
+}
+
